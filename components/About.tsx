@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
@@ -7,7 +8,13 @@ const About: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <img src="https://images.pexels.com/photos/8982439/pexels-photo-8982439.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moderne Autowerkstatt mit Hebebühne" className="rounded-lg shadow-lg" />
+            <Image 
+              src="https://images.pexels.com/photos/8982439/pexels-photo-8982439.jpeg" 
+              alt="Moderne Autowerkstatt mit Hebebühne" 
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg w-full h-auto" 
+            />
           </div>
           <div className="lg:w-1/2">
             <h2 className="text-4xl font-bold mb-6">Präzision aus Erfahrung</h2>

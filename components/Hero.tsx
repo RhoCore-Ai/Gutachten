@@ -1,7 +1,7 @@
-
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
   const scrollToContact = () => {
@@ -9,7 +9,14 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-white text-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/4488651/pexels-photo-4488651.jpeg')" }}>
+    <section id="home" className="relative h-screen flex items-center justify-center text-white text-center">
+       <Image
+        src="https://images.pexels.com/photos/4488651/pexels-photo-4488651.jpeg"
+        alt="Motor eines modernen Autos"
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 p-6">
         <h1 className="text-5xl md:text-7xl font-bold mb-4">Good Motors GmbH</h1>
