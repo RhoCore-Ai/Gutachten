@@ -2,8 +2,13 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../lib/translations';
 
 const Hero: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -19,13 +24,13 @@ const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative z-10 p-6">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">Good Motors GmbH</h1>
-        <p className="text-xl md:text-2xl mb-8 font-light">Ihr unabhängiger Partner für Kfz-Gutachten und Fahrzeugbewertungen.</p>
+        <h1 className="text-5xl md:text-7xl font-bold mb-4">{t.title}</h1>
+        <p className="text-xl md:text-2xl mb-8 font-light">{t.subtitle}</p>
         <button 
           onClick={scrollToContact}
           className="bg-[#0057b7] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-800 transition-transform transform hover:scale-105"
         >
-          Gutachten anfordern
+          {t.button}
         </button>
       </div>
     </section>

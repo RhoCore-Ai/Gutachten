@@ -1,8 +1,15 @@
+"use client";
+
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import Image from 'next/image';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../lib/translations';
 
 const About: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language].about;
+
   return (
     <AnimatedSection id="about" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -17,15 +24,15 @@ const About: React.FC = () => {
             />
           </div>
           <div className="lg:w-1/2">
-            <h2 className="text-4xl font-bold mb-6">Präzision aus Erfahrung</h2>
+            <h2 className="text-4xl font-bold mb-6">{t.title}</h2>
             <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-              Mit jahrelanger Erfahrung in der Fahrzeugtechnik ist Good Motors GmbH Ihr verlässlicher Partner für präzise und fundierte Kfz-Gutachten. Wir verstehen die Komplexität moderner Fahrzeuge und setzen unser Fachwissen ein, um Ihnen Sicherheit und Klarheit zu verschaffen – egal ob im Schadenfall, beim Kauf oder Verkauf.
+              {t.p1}
             </p>
             <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-              Unser Team besteht aus hochqualifizierten, unabhängigen Sachverständigen und Ingenieuren, die unparteiische und gerichtsverwertbare Gutachten erstellen. Wir dokumentieren technische Fakten detailliert zur Ursachenforschung, Schadensanalyse und Beweissicherung und unterstützen Sie bei der Klärung von Haftungsfragen.
+              {t.p2}
             </p>
              <p className="text-lg text-gray-600 leading-relaxed">
-              Unser Prozess ist transparent und gründlich. Von der detaillierten vor-Ort-Analyse über den Einsatz moderner Diagnosetechnik bis zur Erstellung eines umfassenden Berichts nach anerkannten Industriestandards – wir liefern die Fakten, die Sie für Ihre Entscheidungen benötigen.
+              {t.p3}
             </p>
           </div>
         </div>
