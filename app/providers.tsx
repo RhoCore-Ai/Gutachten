@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from '../context/LanguageContext';
 
 const LangUpdater = () => {
     const { language } = useLanguage();
